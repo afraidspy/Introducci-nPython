@@ -1,4 +1,4 @@
-if __name__ == 'main':
+if __name__ == "__main__":
     x = 1
     y = 2
 
@@ -16,4 +16,4 @@ if __name__ == 'main':
     x , y =  y , x
 
     print("x: " + str(x))
-    print("y: ",y)
+    print("y:",y)
