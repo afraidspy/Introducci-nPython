@@ -60,12 +60,38 @@ if __name__ == '__main__':
     #Imprimir el valor de las armas ,tanto de la compu cómo del usuario
     print('El arma del usuario es', mi_arma)
     print('El arma de la compu es', arma_compu)
-    #Validar quién perdió
+    
+
+
+
+    #Indicar que el programa ha terminado
+    #Validar si el usuario perdio
+    if arma_compu =="papel" and mi_arma == "piedra" :
+        print("perdiste")
+    elif arma_compu =="tijera" and mi_arma == "papel":
+        print("perdiste")
+    elif arma_compu =="piedra" and mi_arma == "tijera":
+        print("perdiste")
+
+
 
     #Validar quién gano
 
-    #Indicar si hubo empate
 
-    #Indicar que el programa ha terminado
+    if mi_arma == "piedra" and arma_compu == "tijera":
+        print("ganaste")
+    elif mi_arma == "papel" and arma_compu == "piedra":
+        print("ganaste")
+    elif mi_arma == "tijera" and arma_compu == "papel":
+        print("ganaste")
+
+    #Indicar si hubo empate
+    elif mi_arma == arma_compu:
+        print("Hubo un empate")
+
+
+    print("FIN DEL PROGRAMA ")
+
+
 
     
