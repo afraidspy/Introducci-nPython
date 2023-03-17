@@ -4,7 +4,9 @@
 """
 class Robot:
 
-    def __init__(self, nombre:str, peso:float, km:int):
+    def __init__(self, nombre:str,
+                 peso:float,
+                 km:int):
         self.__nombre = nombre
         self.__peso = peso
         self.__km = km
@@ -29,15 +31,33 @@ class Robot:
         #self.__km = km
         self.__km = km if km > 0 else 0
 
+    def __str__(self):
+        return " Nombre: " + self.get_nombre()+ " Peso: " + str(self.get_peso())+" Km: " +  str(self.get_km())
+
+    def __eq__(self, otro_robot:object)->bool:  
+        return self.get_nombre()== otro_robot.get_nombre() and self.get_peso() == otro_robot.get_peso() and self.get_km() == otro_robot.get_km()
+        
+
         
 if __name__ == "__main__":
+    
+    #nombre = input("Dame nombre: ")
+    #peso = float(input("Dame peso:"))
+    #km = int(input("Dame kilometraje: "))
+    
+    #wall_e = Robot("Pepe", 40.0, 80)
+    #wall_e = Robot(nombre, peso, km)
 
-    wall_e = Robot("Pepe", 40.0, 80)
+    #print("Nombre: " , wall_e.get_nombre())
+    #print(wall_e)
+    
+    #wall_e.set_nombre("Pepe el toro")
+    #print("Nombre: " , wall_e.get_nombre())
 
-    print("Nombre: " , wall_e.get_nombre())
+    robotina = Robot("Lola", 100, 20)
+    robox = Robot("Lola", 100, 20)
 
-    wall_e.set_nombre("Pepe el toro")
-    print("Nombre: " , wall_e.get_nombre())
+    print("Son iguales: ", robotina == robox)
 
 
 
