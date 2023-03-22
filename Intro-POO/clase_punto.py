@@ -2,7 +2,7 @@
 Clase para representar punto en el plano cartesiano
 Autor: Jessica
 """
-
+import math
 class Punto:
 
     def __init__(self, x=0, y=0):
@@ -55,6 +55,10 @@ class Punto:
         """
         return self.__y
 
+
+    def desplazamiento(self, aumento_x:float , aumento_y:float)->object:
+        return Punto(self.get_x() + aumento_x , self.get_y() + aumento_y)
+    
     def suma(self,otro_punto:object)-> object:
         """
             Método que permite sumar dos puntos.
@@ -72,7 +76,28 @@ class Punto:
         return punto_suma
         ## return Punto(self.__x + otro_punto.get_x(), self.__y + otro_punto.get_y())
 
-if __name__ == "__main__":
+    def resta(self, otro:object)-> object:
+        coord_x_nuevo =  self.get_x() - otro.get_x()
+        coord_y_nuevo =  self.get_y() - otro.get_y()
 
-    punto =  Punto()
-    punto2 = Punto(4,5)
+        nuevo = Punto(coord_x_nuevo, coord_y_nuevo)
+
+        return nuevo
+
+    def distancia(self,otro:object)-> float:
+        resta1 = otro.get_x() - self.get_x()
+        resta2 = otro.get_y() - self.get_y()
+
+        potencia1 =  math.pow(resta1,2)
+        potencia2 = math.pow(resta2,2)
+
+        resultado = math.sqrt(potencia1 + potencia2)
+        return resultado
+
+    def __str__(self)->str:
+        return "(" + str(self.get_x()) + " , " + str(self.get_y()) + ")"
+
+    def __eq__(self, otro:object)->bool:
+
+        return self.get_x() == otro.get_x() and self.get_y() == otro.get_y()
+    
