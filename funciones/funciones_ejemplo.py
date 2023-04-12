@@ -1,6 +1,9 @@
     
 def sumar_numeros():  #En otro lenguajes si no regresa nada la función , se usa la palabra reservada void
-    num1 =  int(input('Num1: '))
+    num1 =  int(input('Nu
+
+
+                    m1: '))
     num2 =  int(input('Num2: '))
     sumNums = str(num1 + num2)
     print('La suma es: ' + sumNums)

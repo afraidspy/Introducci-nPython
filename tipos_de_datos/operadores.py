@@ -22,6 +22,7 @@ if __name__ == "__main__":
     print("Resultado = ", resultado)
 
     #Operadores Binarios
+    
     a = 0b11110 
     b = 0b10011 
     print ("a = ", a)
@@ -30,6 +31,8 @@ if __name__ == "__main__":
     print("a&b = ", a & b)
     print("a<<2 = ", a << 2)
     print("a>>2 = ", a >> 2)
+
+    
     '''
         Se comparan los bits en cada posición
         dónde 1 == True y 0 == False'''

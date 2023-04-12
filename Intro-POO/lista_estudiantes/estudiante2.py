@@ -1,3 +1,5 @@
+from materia import Materia
+
 class Estudiante:
     """
     Clase para representar a un estudiante.
@@ -120,12 +122,12 @@ class Estudiante:
             float: El promedio de calificaciones
         """
         sum = 0
-        for i in self.__calificaciones:
-            sum += i
+        for materia in self.__calificaciones:
+            sum += materia.get_calificacion()
 
         return sum / len(self.__calificaciones)
 
-    def agregar_calificacion(self, calif:float):
+    def agregar_materia(self, materia:object):
         """
             Agrega una calificación a la lista de calificaciones almacenadas en el atributo privado __calificaciones.
 
@@ -133,10 +135,14 @@ class Estudiante:
             calificacion (float): La calificación a agregar a la lista.
     
         """
-        self.__calificaciones.append(calif)
+        for i in self.__calificaciones:
+            if i == materia:
+                print("Ya existe la materia")
+            else:
+                self.__calificaciones.append(materia)
 
 
-    def eliminar_calificacion(self,pos:int):
+    def eliminar_materia(self,codigo:int):
         """
            Elimina una calificación de la lista de calificaciones almacenadas en el atributo privado __calificaciones.
 
@@ -144,8 +150,13 @@ class Estudiante:
            pos (int): La posición de la calificación que se va a eliminar en la lista.
 
         """
-        if pos > 0 and pos < len(self.__calificaciones):
-            self.__calificaciones.pop(pos)
+
+        for i in self.__calificaciones:
+            if  i.get_codigo() == codigo:
+                self.__calificaciones.remove(i)
+            else:
+                print("No se encuentra el código")
+        
         
     def obtener_calif_mas_alta(self)-> float:
         """
@@ -153,14 +164,13 @@ class Estudiante:
             Returns
             float: El valor con la calificación más alta
         """
-        """
+        
         max = self.__calificaciones[0]
         for i in range(0, len(self.__calificaciones)):
-            if self.__calificaciones[i] > max:
+            if self.__calificaciones[i].get_calificacion() > max.get_calificacion():
                 max = self.__calificaciones[i]
-        """
-
-        return max(self.__calificaciones) 
+    
+        return max.get_calificacion()        
 
     def obtener_calificaciones_mas_altas(self)-> float:
         """
