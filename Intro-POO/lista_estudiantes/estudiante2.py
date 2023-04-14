@@ -180,7 +180,7 @@ class Estudiante:
         """
         max = []
         for i in range(0, len(self.__calificaciones)):
-            if self.__calificaciones[i] == self.obtener_calif_mas_alta():
+            if self.__calificaciones[i].get_calificacion() == self.obtener_calif_mas_alta():
                 max.append(i)
 
         return max
@@ -195,7 +195,12 @@ class Estudiante:
         str
             La cadena que representa al objeto estudiante.
         """
-        return f"Estudiante: {self.__nombre}, Dirección: {self.__direccion}, Teléfono: {self.__telefono}, Calificaciones : {self.__calificaciones}"
+        info_materias = ""
+
+        for materias in self.__calificaciones:
+            info_materias += materias.__str__() + "\n"
+            
+        return f"Estudiante: {self.__nombre}, Dirección: {self.__direccion}, Teléfono: {self.__telefono}, Calificaciones :\n {info_materias}"
 
     def __eq__(self, otro: 'Estudiante') -> bool:
         """

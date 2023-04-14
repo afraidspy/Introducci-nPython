@@ -1,14 +1,16 @@
 class Materia:
 
-    def __init__():
-        self.__codigo = 0
-        self.__nombre = ""
-        self.__calificacion = 0
+    def __init__(self, codigo:float,nombre:float, calif:float):
+        self.__codigo = codigo
+        self.__nombre = nombre
+        self.__calificacion = calif
 
     #Crear set y get para cada atributo
 
 
     #Crear método str
+    def __str__(self):
+        return "Nombre: " + self.__nombre + " Calif: " + str(self.__calificacion)
 
     #Agregar método __eq__
     
