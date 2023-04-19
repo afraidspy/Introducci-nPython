@@ -4,7 +4,7 @@ if __name__ == "__main__":
 
     while True:
 
-        matriz =  Matriz(4,4)
+        matriz =  Matriz(2,2)
         print(matriz)
 
         matriz.llenar_valores_usuario()
