@@ -54,10 +54,30 @@ class Matriz:
         return transpuesta_matriz
 
     def es_simetrica(self):
-      pass
-    
+        if self.__filas != self.__columnas:
+            return False
+        for i in range(self.__filas):
+            for j in range(self.__columnas):
+                if self.__matriz[i][j] != self.__matriz[j][i]:
+                    return False
+        return True
+   
     def multiplicar(self, matriz_b):
-        pass
+        if self.__columnas != matriz_b.__filas:
+            print("No se pueden multiplicar las matrices. El número de columnas de A no es igual al número de filas de B.")
+            return None
+
+        matriz_c = Matriz(self.__filas, matriz_b.__columnas)
+
+        for i in range(self.__filas):
+            for j in range(matriz_b.__columnas):
+                suma = 0
+                for k in range(self.__columnas):
+                    producto = (self.__matriz[i][k] * matriz_b.__matriz[k][j])
+                    suma += producto
+                matriz_c.__matriz[i][j] = suma
+
+        return matriz_c
 
 
     def __str__(self):
