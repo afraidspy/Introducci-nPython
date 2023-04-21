@@ -19,16 +19,39 @@ class Matriz:
     def llenar_valores_usuario(self):
         for i in range(self.__filas):
             for j in range(self.__columnas):
-                valor = input("Escribe el valor de la casilla "+str(i) + "," + str(j))
+                valor = float( input("Escribe el valor de la casilla "+str(i) + "," + str(j)))
                 self.__matriz[i][j] = valor
                 #print(self.__matriz[i][j], end = "")
             #print()
             
        
     def sumar_matrices(self, otra_matriz):
-       pass
+
+        ##suma_m = Matriz(self.__filas, self.__columnas)
+        if self.__filas == otra_matriz.__filas and self.__columnas == otra_matriz.__columnas:
+            suma_m = Matriz(otra_matriz.__filas, otra_matriz.__columnas)
+
+            for i in range(self.__filas):
+                for j in range(self.__columnas):                    
+                    suma_m.__matriz[i][j] = self.__matriz[i][j] + otra_matriz.__matriz[i][j]
+
+            return suma_m                
+        else:
+            print("Las matrices deben de ser de las mismas dimensiones")
+
+            return None
+        
+      
+    
     def obtener_transpuesta(self):
-        pass
+        transpuesta_matriz = Matriz(self.__columnas, self.__filas)
+
+        for i in range(transpuesta_matriz.__filas):
+            for j in range(transpuesta_matriz.__columnas):
+
+                transpuesta_matriz.__matriz [i][j] = self.__matriz [j][i]
+
+        return transpuesta_matriz
 
     def es_simetrica(self):
       pass
@@ -47,8 +70,4 @@ class Matriz:
         return info
             
 
-
-matriz = Matriz(3,3)
-
-matriz.llenar_valores_usuario()
 

@@ -57,7 +57,15 @@ class EjemplosListas:
             Params:
                 valor(float) -  El valor a considerar
         """
-        pass
+        mayores = []
+        for i in self.__lista:
+            sublista = i
+            for j in sublista:
+                if j not in mayores and j > valor:
+                    mayores.append(j)
+
+        return mayores
+                    
 
     def imprimir_matriz(self):
         for i in self.__lista:
