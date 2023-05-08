@@ -29,7 +29,10 @@ if __name__ == "__main__":
                 print(suma)
                 
             case 2:
-                print("Resta")
+                print("Identidad")
+                m3 = Matriz(3,3)
+                iden= m3.get_identidad()
+                print(iden)
                 
             case 3:
                 print("Multiplicación")
@@ -40,5 +43,10 @@ if __name__ == "__main__":
                 print(m1)
                 transpuesta = m1.obtener_transpuesta()
                 print(transpuesta)
+            case 5:
+                print("Identidad")
+                m3 = Matriz(3,3)
+                iden= m3.get_identidad()
+                print(iden)
                 
                 

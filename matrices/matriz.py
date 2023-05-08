@@ -13,6 +13,18 @@ class Matriz:
             for j in range(self.__columnas):
                 sublista.append(0.0)
             self.__matriz.append(sublista)
+
+    def get_identidad(self):
+        # Creamos una matriz de ceros del mismo tamaño que la matriz original
+        identidad = Matriz(self.__filas, self.__columnas)
+
+        # Recorremos la diagonal principal y asignamos 1 en cada posición
+        for i in range(self.__filas):
+            for j in range(self.__columnas):
+                if i == j:
+                    identidad.__matriz[i][j] = 1.0
+        
+        return identidad
      
 
    
