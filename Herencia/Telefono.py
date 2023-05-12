@@ -42,13 +42,17 @@ print(Telefono.contador)
 print(telefono.llamar("99999999"))
 """
 
-##telefono_fijo = TelefonoFijo("11111111")
-##telefono_fijo2 = TelefonoFijo("222222")
+telefono_fijo = TelefonoFijo("11111111")#1
+telefono_fijo2 = TelefonoFijo("222222")#2
+
+print("Número de teléfonos fijos: ",TelefonoFijo.contador_tel_fijo)
 
 num = input("Escribe número de telefono")
-mi_iphone=TelefonoCelular(num)
+mi_iphone=TelefonoCelular(num)#3
 num_otro= input("Escribe número de telefono al que vas a llamar")
 print(mi_iphone.llamar(num_otro))
+
+print("Número de teléfonos en total: ",Telefono.contador)#
 
 """telefono_fijo.llamar("33333")
 print("Número de teléfonos fijos: ",TelefonoFijo.contador_tel_fijo)
