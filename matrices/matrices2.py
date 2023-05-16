@@ -39,6 +39,16 @@ class Matriz:
             for j in range(self.__columnas):
                 resultado.__matriz[i][j] = self.__matriz[i][j] + otra_matriz.__matriz[i][j]
         return resultado
+    
+    def restar_matrices(self, otra_matriz):
+        if self.__filas != otra_matriz.__filas or self.__columnas != otra_matriz.__columnas:
+            print("Las matrices deben tener las mismas dimensiones para poder sumarlas.")
+        resultado = Matriz(self.__filas, self.__columnas)
+        for i in range(self.__filas):
+            for j in range(self.__columnas):
+                resultado.__matriz[i][j] = self.__matriz[i][j] - otra_matriz.__matriz[i][j]
+        return resultado
+    
    
     def obtener_transpuesta(self):
         transpuesta = Matriz(self.__columnas, self.__filas)
